@@ -6,11 +6,11 @@ It applies a component design pattern based on AtomicDesign, using Webpack for t
 
 WIP
 
-- [-] ts
-- [-] webpack
-- [ ] mui
-- [ ] atomic design
-- [ ] styled-components
+- [x] ts
+- [x] webpack
+- [x] mui
+- [x] atomic design
+- [x] styled-components
 - [ ] jest, testing-library
 - [ ] lint
 - [ ] ci

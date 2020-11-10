@@ -5,7 +5,7 @@ import { Button } from "@rtab/components/atoms";
 const Index = () => (
   <>
     <h1>Hello!</h1>
-    <Button />
+    <Button variant="contained">hi there</Button>
   </>
 )
 

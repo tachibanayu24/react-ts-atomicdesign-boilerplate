@@ -1,20 +1,29 @@
 {
   "name": "react-ts-atomicdesign-boilerplate",
   "version": "1.0.0",
-  "repository": "git@github.com:tachibanayu24/react-ts-mui-boilerplate.git",
+  "repository": "git@github.com:tachibanayu24/react-ts-atomicdesign-boilerplate.git",
   "author": "Yuto Tachibana <tachibanayu24@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=localhost webpack-dev-server --config webpack/webpack.dev.js"
   },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
+    "@babel/preset-typescript": "^7.12.1",
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
+    "@types/styled-components": "^5.1.4",
     "babel-loader": "^8.2.1",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-styled-components": "^1.11.1",
@@ -32,9 +41,5 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.3.0"
-  },
-  "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
   }
 }
