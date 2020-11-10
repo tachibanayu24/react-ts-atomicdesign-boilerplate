@@ -20,6 +20,7 @@ WIP
 - [x] mui
 - [x] atomic design
 - [x] styled-components
+- [ ] routing
 - [ ] jest, testing-library
 - [ ] lint
 - [ ] ci
