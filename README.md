@@ -7,7 +7,7 @@ It applies a component design pattern based on AtomicDesign, using Webpack for t
 WIP
 
 - [-] ts
-- [ ] webpack
+- [-] webpack
 - [ ] mui
 - [ ] atomic design
 - [ ] styled-components
