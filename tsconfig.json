@@ -1,10 +1,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": ".",
-    "baseUrl": ".",
+    "rootDir": "./",
+    "baseUrl": "./",
     "sourceMap": true,
     "declaration": false,
+    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -13,9 +14,9 @@
     "module": "es2015",
     "jsx": "react",
     "strict": true,
-    "paths": {
-      "@rtab/components": ["src/components/index.ts"],
-    }
+  },
+  "paths": {
+    "@rtab/components/*": ["'src/components'/*"],
   },
   "exclude": ["node_modules", "tmp"]
 }
