@@ -1,10 +1,14 @@
 const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
 
-const htmlWebpackPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
-  favicon: "./src/images/favicon/favicon.ico",
-});
+// TODO: webpack5でstorybookをビルドすると、以下のプラグインとの依存関係でエラーが出る
+// 問題が修正されたら、以下をインストールする
+// https://github.com/storybookjs/storybook/issues/9216
+// "html-webpack-plugin": "^4.5.0",
+// const HtmlWebPackPlugin = require("html-webpack-plugin");
+// const htmlWebpackPlugin = new HtmlWebPackPlugin({
+//   template: "./src/index.html",
+//   favicon: "./src/images/favicon/favicon.ico",
+// });
 
 module.exports = {
   entry: ["@babel/polyfill", "./src/index.tsx"],
@@ -22,7 +26,7 @@ module.exports = {
     poll: true,
     ignored: /node_modules/,
   },
-  plugins: [htmlWebpackPlugin],
+  // plugins: [htmlWebpackPlugin],
   module: {
     rules: [
       {

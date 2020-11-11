@@ -15,6 +15,8 @@ $ yarn start
 
 WIP
 
+tasks
+
 - [x] ts
 - [x] webpack
 - [x] mui
@@ -27,3 +29,10 @@ WIP
 - [ ] storybook
 - [ ] axios
 - [ ] date-fns
+- [ ] CLI(create-components)
+- [ ] .vscode
+
+bugs
+
+- [ ] vscode の設定(インポートでエラー)
+- [ ] storybook の deprecated 対応
