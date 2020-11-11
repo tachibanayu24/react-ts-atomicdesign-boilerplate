@@ -8,11 +8,12 @@ export default {
   decorators: [withKnobs],
 };
 
-const Box = () => <div css="background: aquamarine; width: 40px; height: 40px" />;
+const Box = () => (
+  <div css="background: aquamarine; width: 40px; height: 40px" />
+);
 
 export const _Default: Story<ComponentProps<typeof Spacer>> = () => {
   const size = number("Size", 24);
-
 
   return (
     <>

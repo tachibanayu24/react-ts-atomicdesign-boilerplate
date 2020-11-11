@@ -39,9 +39,9 @@ tasks
 - [ ] axios
 - [ ] date-fns
 - [ ] CLI(create-components)
-- [ ] .vscode
+- [x] .vscode
 
 bugs
 
-- [ ] vscode の設定(インポートでエラー)
+- [x] vscode の設定(インポートでエラー)
 - [ ] storybook の deprecated 対応

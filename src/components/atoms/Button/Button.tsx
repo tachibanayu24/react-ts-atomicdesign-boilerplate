@@ -4,9 +4,7 @@ import { Button as MuiButton } from "@material-ui/core";
 
 type Props = React.ComponentProps<typeof MuiButton>;
 
-export const Button = (props: Props) => (
-  <StyledMuiButton {...props} />
-);
+export const Button = (props: Props) => <StyledMuiButton {...props} />;
 
 const StyledMuiButton = styled(MuiButton)`
   &.MuiButton-root {
