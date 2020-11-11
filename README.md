@@ -1,6 +1,6 @@
 # React TypeScript AtomicDesign Boilerplate
 
-This is a boilerplate for front-end development with React in TypeScript.
+This is a boilerplate for frontend development with React in TypeScript.
 
 It applies a component design pattern based on AtomicDesign, using Webpack for the bandler and styled-components for CSS.
 
@@ -11,6 +11,15 @@ Webpack-dev-server will launch and https://localhost:3000 will open in browser.
 ```sh
 $ yarn install
 $ yarn start
+```
+
+## UI Component Explore
+
+Storybook will launch and https://localhost:6006 will open in browser.
+
+```sh
+$ yarn storybook
+$ yarn build-storybook # build command
 ```
 
 WIP
@@ -26,7 +35,7 @@ tasks
 - [ ] jest, testing-library
 - [ ] lint
 - [ ] ci
-- [ ] storybook
+- [x] storybook
 - [ ] axios
 - [ ] date-fns
 - [ ] CLI(create-components)

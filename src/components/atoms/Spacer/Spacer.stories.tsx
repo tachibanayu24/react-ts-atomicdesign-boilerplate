@@ -8,31 +8,31 @@ export default {
   decorators: [withKnobs],
 };
 
-const Box = () => <div css="background: aquamarine; width: 40px; height: 40px" />
+const Box = () => <div css="background: aquamarine; width: 40px; height: 40px" />;
 
 export const _Default: Story<ComponentProps<typeof Spacer>> = () => {
   const size = number("Size", 24);
 
 
-    return (
-      <>
-        <h3>Horizontal</h3>
-        <Box />
-        <Spacer variant="horizontal" size={size} />
-        <Box />
-        <Spacer variant="horizontal" size={size} />
-        <Box />
+  return (
+    <>
+      <h3>Horizontal</h3>
+      <Box />
+      <Spacer variant="horizontal" size={size} />
+      <Box />
+      <Spacer variant="horizontal" size={size} />
+      <Box />
 
-        <hr />
+      <hr />
 
-        <h3>Vertical</h3>
-        <div css="display: flex">
-          <Box />
-          <Spacer variant="vertical" size={size} />
-          <Box />
-          <Spacer variant="vertical" size={size} />
-          <Box />
-        </div>
+      <h3>Vertical</h3>
+      <div css="display: flex">
+        <Box />
+        <Spacer variant="vertical" size={size} />
+        <Box />
+        <Spacer variant="vertical" size={size} />
+        <Box />
+      </div>
     </>
   );
 };

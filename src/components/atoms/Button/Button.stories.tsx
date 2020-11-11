@@ -22,19 +22,19 @@ export const _Default: Story<ComponentProps<typeof Button>> = () => {
     "primary"
   );
 
-    return (
+  return (
     <>
-        <Button variant="outlined" disabled={disabled} color={color} onClick={action("clicked")}>
+      <Button variant="outlined" disabled={disabled} color={color} onClick={action("clicked")}>
                 Outlined Button
-        </Button>
-        <div css="margin: 16px" />
-        <Button variant="contained" disabled={disabled} color={color} onClick={action("clicked")}>
+      </Button>
+      <div css="margin: 16px" />
+      <Button variant="contained" disabled={disabled} color={color} onClick={action("clicked")}>
                 Cointained Button
-        </Button>
-        <div css="margin: 16px" />
-        <Button variant="text" disabled={disabled} color={color} onClick={action("clicked")}>
+      </Button>
+      <div css="margin: 16px" />
+      <Button variant="text" disabled={disabled} color={color} onClick={action("clicked")}>
             Text Button
-        </Button>
+      </Button>
     </>
   );
 };

@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=localhost webpack-dev-server --config webpack/webpack.dev.js",
+    "lint": "eslint .",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -32,6 +33,7 @@
     "@types/react-dom": "^16.9.9",
     "@types/storybook__react": "^5.2.1",
     "@types/styled-components": "^5.1.4",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.1",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-styled-components": "^1.11.1",

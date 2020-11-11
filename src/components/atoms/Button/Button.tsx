@@ -1,12 +1,12 @@
 import React from "react";
-import styled from "styled-components"
+import styled from "styled-components";
 import { Button as MuiButton } from "@material-ui/core";
 
 type Props = React.ComponentProps<typeof MuiButton>;
 
 export const Button = (props: Props) => (
   <StyledMuiButton {...props} />
-)
+);
 
 const StyledMuiButton = styled(MuiButton)`
   &.MuiButton-root {
@@ -15,4 +15,4 @@ const StyledMuiButton = styled(MuiButton)`
     text-transform: none;
     font-weight: lighter;
   }
-`
+`;
