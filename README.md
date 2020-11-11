@@ -33,7 +33,7 @@ tasks
 - [x] styled-components
 - [ ] routing
 - [ ] jest, testing-library
-- [ ] lint
+- [x] lint
 - [ ] ci
 - [x] storybook
 - [ ] axios

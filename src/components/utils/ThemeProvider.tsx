@@ -5,6 +5,10 @@ import { ThemeProvider as StyledThemeProvider } from "styled-components";
 
 const theme = createMuiTheme({
   overrides: {},
+  typography: {
+    fontFamily:
+      "Futura, Futura, Meiryo, メイリオ, Meiryo, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, ＭＳ Ｐゴシック, MS PGothic, sans-serif",
+  },
   palette: {
     primary: {
       main: "#0974E8",
@@ -12,6 +16,9 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: "#fa367b",
+    },
+    text: {
+      primary: "#333",
     },
   },
 });
