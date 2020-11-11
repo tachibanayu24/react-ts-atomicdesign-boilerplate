@@ -1,7 +1,7 @@
 import React, { ComponentProps } from "react";
 import { Story } from "@storybook/react/types-6-0";
 import { action } from "@storybook/addon-actions";
-import { withKnobs, boolean, select } from "@storybook/addon-knobs";
+import { withKnobs } from "@storybook/addon-knobs";
 import { Button } from "./Button";
 
 export default {
@@ -10,46 +10,30 @@ export default {
 };
 
 export const _Default: Story<ComponentProps<typeof Button>> = () => {
-  const disabled = boolean("Disabled", false);
-  const color = select(
-    "Color",
-    {
-      Default: "default",
-      Primary: "primary",
-      Secondary: "secondary",
-      Inherit: "inherit",
-    },
-    "primary"
-  );
-
   return (
-    <>
-      <Button
-        variant="outlined"
-        disabled={disabled}
-        color={color}
-        onClick={action("clicked")}
-      >
-        Outlined Button
-      </Button>
-      <div css="margin: 16px" />
-      <Button
-        variant="contained"
-        disabled={disabled}
-        color={color}
-        onClick={action("clicked")}
-      >
-        Cointained Button
-      </Button>
-      <div css="margin: 16px" />
-      <Button
-        variant="text"
-        disabled={disabled}
-        color={color}
-        onClick={action("clicked")}
-      >
-        Text Button
-      </Button>
-    </>
+    <div css="display: flex;">
+      {["primary", "secondary", "default"].map((color, i) => (
+        <div css="width: 360px;" key={`story--Button__${i}`}>
+          <Button variant="outlined" color={color} onClick={action("clicked")}>
+            Outlined Button
+          </Button>
+          <div css="margin: 16px" />
+          <Button variant="contained" color={color} onClick={action("clicked")}>
+            Cointained Button
+          </Button>
+          <div css="margin: 16px" />
+          <Button variant="text" color={color} onClick={action("clicked")}>
+            Text Button
+          </Button>
+        </div>
+      ))}
+      <div css="width: 360px;">
+        <Button disabled={true}>Outlined Button</Button>
+        <div css="margin: 16px" />
+        <Button disabled={true}>Cointained Button</Button>
+        <div css="margin: 16px" />
+        <Button disabled={true}>Text Button</Button>
+      </div>
+    </div>
   );
 };

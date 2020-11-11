@@ -24,7 +24,7 @@ export const _Default: Story<ComponentProps<typeof Spacer>> = () => {
       <Spacer variant="horizontal" size={size} />
       <Box />
 
-      <hr />
+      <Spacer variant="horizontal" size={40} />
 
       <h3>Vertical</h3>
       <div css="display: flex">
