@@ -9,6 +9,7 @@ type Props = {
 export const Spacer = (props: Props) => <StyledDiv {...props} />;
 
 const StyledDiv = styled.div`
+  display: inline-block;
   ${(props) =>
     props.variant === "horizontal" &&
     `

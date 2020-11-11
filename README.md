@@ -40,6 +40,7 @@ tasks
 - [ ] date-fns
 - [ ] CLI(create-components)
 - [x] .vscode
+- [ ] storybook to gp
 
 bugs
 

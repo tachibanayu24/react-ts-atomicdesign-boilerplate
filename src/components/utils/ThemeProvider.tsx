@@ -1,9 +1,9 @@
 import React from "react";
-import { ThemeProvider as MuiThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/styles";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 
-const theme = createMuiTheme({
+const theme = {
   overrides: {},
   typography: {
     fontFamily:
@@ -17,11 +17,17 @@ const theme = createMuiTheme({
     secondary: {
       main: "#fa367b",
     },
+    gray: {
+      main: "#555",
+    },
+    white: {
+      main: "#fff",
+    },
     text: {
       primary: "#333",
     },
   },
-});
+};
 
 type Props = {
   children: React.ReactNode;
@@ -29,7 +35,7 @@ type Props = {
 
 export const ThemeProvider: React.FC<Props> = ({ children }: Props) => {
   return (
-    <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={createMuiTheme(theme)}>
       <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
     </MuiThemeProvider>
   );
