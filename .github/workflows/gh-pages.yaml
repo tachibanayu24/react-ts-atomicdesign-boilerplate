@@ -1,29 +1,36 @@
 name: github pages
+
 on:
   push:
     branches:
       - main
+
 jobs:
-  deploy:
+  build-deploy:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node
+
+      - name: setup node
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
-      - name: Install dependencies
-        run: yarn install
 
+      - name: Cache dependencies
         uses: actions/cache@v1
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - run: yarn install --frozen-lockfile
-      - run: yarn build-storybook
-      - name: Deploy
+
+      - name: install
+        run: yarn install --frozen-lockfile
+
+      - name: build storybook
+        run: yarn build-storybook
+
+      - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
