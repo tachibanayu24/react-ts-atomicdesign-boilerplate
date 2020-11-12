@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "create-component": "node ./tools/createComponent.js"
+    "create-component": "node ./tools/create-component.js"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",

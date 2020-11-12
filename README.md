@@ -33,10 +33,10 @@ Here is an example usage.
 ```sh
 $ yarn create-component -C atoms/Icon
 
-✨ Create component template ./src/components/atoms/Icon/index.ts
-✨ Create component template ./src/components/atoms/Icon/Icon.tsx
-✨ Create component template ./src/components/atoms/Icon/Icon.stories.tsx
-✨ Create component template ./src/components/atoms/Icon/Icon.spec.tsx
+✨ Create component ./src/components/atoms/Icon/index.ts
+✨ Create component ./src/components/atoms/Icon/Icon.tsx
+✨ Create component ./src/components/atoms/Icon/Icon.stories.tsx
+✨ Create component ./src/components/atoms/Icon/Icon.spec.tsx
 ```
 
 WIP

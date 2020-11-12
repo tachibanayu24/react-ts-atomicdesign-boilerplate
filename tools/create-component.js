@@ -2,7 +2,7 @@ const { program } = require("commander");
 const fs = require("fs");
 
 program.option(
-  "-C, --component [component name]",
+  "-C, --component [dir/Component]",
   "The name of the component to be created (ex) atoms/Button"
 );
 
@@ -56,5 +56,5 @@ templates.forEach((template, index) => {
       }
     }
   );
-  console.log(`✨ Create component template ${dests[index]}`);
+  console.log(`✨ Create component ${dests[index]}`);
 });
