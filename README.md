@@ -22,6 +22,23 @@ $ yarn storybook
 $ yarn build-storybook # build command
 ```
 
+## CLI tools
+
+### create-component
+
+Create index.ts, Component.ts, Component.stories.tsx, and Component.spec.tsx with a one command 🚀
+
+Here is an example usage.
+
+```sh
+$ yarn create-component -C atoms/Icon
+
+✨ Create component template ./src/components/atoms/Icon/index.ts
+✨ Create component template ./src/components/atoms/Icon/Icon.tsx
+✨ Create component template ./src/components/atoms/Icon/Icon.stories.tsx
+✨ Create component template ./src/components/atoms/Icon/Icon.spec.tsx
+```
+
 WIP
 
 tasks
@@ -38,7 +55,7 @@ tasks
 - [x] storybook
 - [ ] axios
 - [ ] date-fns
-- [ ] CLI(create-components)
+- [x] CLI(create-components)
 - [x] .vscode
 - [ ] storybook to gp
 
