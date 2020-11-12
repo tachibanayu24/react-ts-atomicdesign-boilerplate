@@ -4,6 +4,12 @@ This is a boilerplate for frontend development with React in TypeScript.
 
 It applies a component design pattern based on AtomicDesign, using Webpack for the bandler and styled-components for CSS.
 
+## Live Demo
+
+### Storybook
+
+https://tachibanayu24.github.io/react-ts-atomicdesign-boilerplate
+
 ## Setup
 
 Webpack-dev-server will launch and https://localhost:3000 will open in browser.
@@ -57,9 +63,10 @@ tasks
 - [ ] date-fns
 - [x] CLI(create-components)
 - [x] .vscode
-- [ ] storybook to gp
+- [x] storybook to gp
 
 bugs
 
 - [x] vscode の設定(インポートでエラー)
 - [ ] storybook の deprecated 対応
+- [ ] ビルドしたstorybookにテーマがあたっていない
