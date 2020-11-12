@@ -13,10 +13,10 @@
     "target": "es5",
     "module": "es2015",
     "jsx": "react",
-    "strict": true,
+    "strict": true
   },
   "paths": {
-    "@rtab/components/*": ["'src/components'/*"],
+    "@rtab/components/*": ["'src/components'/*"]
   },
   "exclude": ["node_modules", "tmp"]
 }
