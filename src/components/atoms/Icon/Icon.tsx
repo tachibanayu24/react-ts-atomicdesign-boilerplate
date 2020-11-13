@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import User from "@rtab/images/icons/user.svg";
 import Cross from "@rtab/images/icons/cross.svg";
+import All from "@rtab/images/icons/all.svg";
+import Science from "@rtab/images/icons/science.svg";
 
 const SIZE = {
   lg: 32,
@@ -12,14 +14,16 @@ const SIZE = {
 
 type Props = {
   size: "sm" | "md" | "lg";
-  icon: "user" | "cross";
+  icon: "user" | "cross" | "all" | "science";
   color: "primary" | "secondary" | "gray" | "white";
 };
 
 export const Icon = (props: Props) => {
   const icons = {
-    user: <User width={SIZE[props.size]} height={SIZE[props.size]} />,
-    cross: <Cross width={SIZE[props.size]} height={SIZE[props.size]} />,
+    user: <User />,
+    cross: <Cross />,
+    all: <All width={SIZE[props.size]} height={SIZE[props.size]} />,
+    science: <Science width={SIZE[props.size]} height={SIZE[props.size]} />,
   };
 
   return (

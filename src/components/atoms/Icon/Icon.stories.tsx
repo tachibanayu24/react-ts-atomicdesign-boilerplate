@@ -44,6 +44,11 @@ export const _Default: Story<ComponentProps<typeof Icon>> = () => {
       <Icon size={size} color={color} icon="user" />
       <Spacer variant="vertical" size={16} />
       <Icon size={size} color={color} icon="cross" />
+      <Spacer variant="vertical" size={16} />
+      <Icon size={size} color={color} icon="all" />
+      <Spacer variant="vertical" size={16} />{" "}
+      <Icon size={size} color={color} icon="science" />
+      <Spacer variant="vertical" size={16} />
     </div>
   );
 };
