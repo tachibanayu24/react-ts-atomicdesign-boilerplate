@@ -11,6 +11,7 @@ module.exports = {
     ["@babel/preset-react"],
   ],
   plugins: [
+    "inline-react-svg",
     "babel-plugin-styled-components",
     [
       "module-resolver",
@@ -18,6 +19,7 @@ module.exports = {
         root: ["./"],
         alias: {
           "@rtab/components": "./src/components",
+          "@rtab/images": "./src/images",
         },
       },
     ],

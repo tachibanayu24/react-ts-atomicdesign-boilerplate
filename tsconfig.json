@@ -16,7 +16,8 @@
     "strict": true
   },
   "paths": {
-    "@rtab/components/*": ["'src/components'/*"]
+    "@rtab/components/*": ["src/components/*"],
+    "@rtab/images/*": ["src/images/*"]
   },
   "exclude": ["node_modules", "tmp"]
 }

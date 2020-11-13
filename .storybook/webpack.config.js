@@ -28,26 +28,13 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: "babel-loader",
-          },
-          {
-            loader: "react-svg-loader",
-            options: {
-              jsx: true,
-            },
-          },
-        ],
-      },
     ],
   },
   resolve: {
     extensions: [".ts", ".tsx"],
     alias: {
       "@rtab/components": path.resolve(__dirname, "../src/components"),
+      "@rtab/images": path.resolve(__dirname, "../src/images"),
     },
   },
   performance: {

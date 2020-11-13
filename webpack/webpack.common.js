@@ -20,6 +20,7 @@ module.exports = {
     extensions: [".js", ".ts", ".tsx"],
     alias: {
       "@rtab/components": path.resolve(__dirname, "src/components"),
+      "@rtab/images": path.resolve(__dirname, "src/images"),
     },
   },
   watchOptions: {
@@ -63,23 +64,6 @@ module.exports = {
         use: [
           {
             loader: "file-loader",
-          },
-        ],
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: ["@babel/preset-env"],
-            },
-          },
-          {
-            loader: "react-svg-loader",
-            options: {
-              tsx: true,
-            },
           },
         ],
       },
