@@ -1,24 +1,32 @@
-import React from "react";
-// import styled from "styled-components";
-import { Typography } from "@rtab/components/atoms";
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { Typography, Button, Loading } from "@rtab/components/atoms";
 
 // type Props = React.ComponentProps<typeof MuiButton>;
 
 export const Home = () => {
+  const [quiz, setQuiz] = useState(null);
+  const [loadingQuiz, setLoadingQuiz] = useState(true);
+
   return (
     <>
-      <Typography variant="h4" align="center" color="secondary">
+      <Typography variant="h4" align="center" color="secondary" bold>
         TRIVIA QUIZ
       </Typography>
+
+      {loadingQuiz ? (
+        <StyledFlexWrapper>
+          <Loading size="lg" color="gray" />
+        </StyledFlexWrapper>
+      ) : (
+        <Typography variant="body" align="center"></Typography>
+      )}
     </>
   );
 };
 
-// const StyledMuiButton = styled.div`
-//   &.MuiButton-root {
-//     border-radius: 0px;
-//     padding: 4 16px;
-//     text-transform: none;
-//     font-weight: lighter;
-//   }
-// `;
+const StyledFlexWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 80px;
+`;

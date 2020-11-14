@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { Typography as MuiTypography } from "@material-ui/core";
 
 type CustomProps = {
@@ -13,9 +14,16 @@ type CustomProps = {
     | "body2"
     | "button"
     | "caption";
+  bold?: boolean;
 };
 
 type Props = Omit<React.ComponentProps<typeof MuiTypography>, "variant"> &
   CustomProps;
 
-export const Typography = (props: Props) => <MuiTypography {...props} />;
+export const Typography = (props: Props) => <StyledTypography {...props} />;
+
+const StyledTypography = styled(MuiTypography)`
+  &.MuiTypography-root {
+    ${(props) => props.bold && `font-weight: bold;`}
+  }
+`;

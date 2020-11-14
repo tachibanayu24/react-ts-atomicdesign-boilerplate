@@ -32,7 +32,7 @@ const StyledWrapper = styled.div`
   height: ${(props) => 80 * SCALE[props.size]}px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -70%);
+  /* transform: translate(-50%, -70%); */
 `;
 
 const StyledLoading = styled.div`
