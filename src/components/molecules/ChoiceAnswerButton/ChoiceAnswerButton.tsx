@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { Button, Icon, Typography } from "@rtab/components/atoms";
 
 type Props = {
@@ -17,7 +16,7 @@ export const ChoiceAnswerButton = (props: Props) => {
   } else if (props.answer === "no") {
     return (
       <Button variant="contained" onClick={props.onClick}>
-        <Icon icon="cross" size="md" color="gray" color="secondary" />
+        <Icon icon="cross" size="md" color="secondary" />
       </Button>
     );
   } else {
@@ -28,7 +27,3 @@ export const ChoiceAnswerButton = (props: Props) => {
     );
   }
 };
-
-const StyledButton = styled.button`
-  padding: 8px;
-`;
