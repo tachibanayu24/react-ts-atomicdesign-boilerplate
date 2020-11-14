@@ -18,6 +18,4 @@ type CustomProps = {
 type Props = Omit<React.ComponentProps<typeof MuiTypography>, "variant"> &
   CustomProps;
 
-export const Typography = (props: Props) => (
-  <MuiTypography {...props} gutterBottom />
-);
+export const Typography = (props: Props) => <MuiTypography {...props} />;

@@ -1,7 +1,7 @@
 import React, { ComponentProps } from "react";
 import { Story } from "@storybook/react/types-6-0";
 import { withKnobs, number } from "@storybook/addon-knobs";
-import { Spacer } from "./Spacer";
+import { Spacer, Typography } from "@rtab/components/atoms";
 
 export default {
   title: "Atoms/Spacer",
@@ -17,7 +17,9 @@ export const _Default: Story<ComponentProps<typeof Spacer>> = () => {
 
   return (
     <>
-      <h3>Horizontal</h3>
+      <Typography variant="h4" gutterBottom>
+        Horizontal
+      </Typography>
       <Box />
       <Spacer variant="horizontal" size={size} />
       <Box />
@@ -26,7 +28,9 @@ export const _Default: Story<ComponentProps<typeof Spacer>> = () => {
 
       <Spacer variant="horizontal" size={40} />
 
-      <h3>Vertical</h3>
+      <Typography variant="h4" gutterBottom>
+        Vertical
+      </Typography>
       <div css="display: flex">
         <Box />
         <Spacer variant="vertical" size={size} />

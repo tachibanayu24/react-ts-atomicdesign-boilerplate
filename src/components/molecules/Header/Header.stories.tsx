@@ -16,7 +16,7 @@ export const _Default: Story<ComponentProps<typeof Header>> = () => {
       <Header />
       <Spacer variant="horizontal" size={48} />
       {[...new Array(12)].map((_, i) => (
-        <Typography key={`default__${i}`} variant="body2">
+        <Typography key={`default__${i}`} variant="body2" gutterBottom>
           Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
           dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
           consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel
@@ -34,7 +34,7 @@ export const WithForkMe: Story<ComponentProps<typeof Header>> = () => {
       <ForkMe />
       <Spacer variant="horizontal" size={48} />
       {[...new Array(12)].map((_, i) => (
-        <Typography key={`default__${i}`} variant="body2">
+        <Typography key={`default__${i}`} variant="body2" gutterBottom>
           Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
           dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
           consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel

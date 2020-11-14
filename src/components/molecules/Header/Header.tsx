@@ -6,12 +6,14 @@ export const Header = () => {
   return (
     <AppBar>
       <Toolbar variant="dense">
-        <Typography variant="subtitle1">React Quiz</Typography>
-        <Spacer variant="vertical" size={24} />
-
-        <Spacer variant="vertical" size={8} />
-        <Typography variant="subtitle2">
-          Atomic Design System Structure
+        <Typography>
+          <Typography variant="subtitle1" component="span">
+            React Quiz
+          </Typography>
+          <Spacer variant="vertical" size={24} />
+          <Typography variant="caption" component="span">
+            React TypeScript AtomicDesign Boilerplate
+          </Typography>
         </Typography>
       </Toolbar>
     </AppBar>
