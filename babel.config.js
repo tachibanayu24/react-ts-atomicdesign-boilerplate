@@ -20,6 +20,7 @@ module.exports = {
         alias: {
           "@rtab/components": "./src/components",
           "@rtab/images": "./src/images",
+          "@rtab/utils": "./src/utils",
         },
       },
     ],

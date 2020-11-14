@@ -35,6 +35,7 @@ module.exports = {
     alias: {
       "@rtab/components": path.resolve(__dirname, "../src/components"),
       "@rtab/images": path.resolve(__dirname, "../src/images"),
+      "@rtab/utils": path.resolve(__dirname, "../src/utils"),
     },
   },
   performance: {
