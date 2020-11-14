@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createRef } from "react";
 import styled from "styled-components";
 import {
   Typography,
@@ -8,19 +8,34 @@ import {
   Spacer,
 } from "@rtab/components/atoms";
 import { ChoiceAnswerButton } from "@rtab/components/molecules";
-import { get } from "@rtab/utils";
+import { get, buildReplyToAnswer } from "@rtab/utils";
 
 // type Props = React.ComponentProps<typeof MuiButton>;
 
 export const Home = () => {
   const [quiz, setQuiz] = useState(null);
-  const [correct, setCorrect] = useState(null);
+  const [isCorrect, setIsCorrect] = useState(null);
+  const [result, setResult] = useState(null);
   const [loadingQuiz, setLoadingQuiz] = useState(false);
 
+  useEffect(() => {
+    console.log("useEffect");
+    setResult(buildReplyToAnswer(isCorrect));
+  }, [isCorrect]);
+
   console.log(quiz);
+  console.log(isCorrect);
+  console.log(result);
+
+  const resetState = () => {
+    setQuiz(null);
+    setIsCorrect(null);
+    setResult(null);
+  };
 
   const fetchQuiz = () => {
     setLoadingQuiz(true);
+    resetState();
 
     get("/", { amount: 1, category: null })
       .then((res) => {
@@ -31,19 +46,12 @@ export const Home = () => {
   };
 
   const submitAnswer = (correctAnswer, choosenAnswer) => {
-    console.log(choosenAnswer);
-    correctAnswer === choosenAnswer ? setCorrect(true) : setCorrect(false);
+    correctAnswer === choosenAnswer ? setIsCorrect(true) : setIsCorrect(false);
   };
 
   return (
     <>
-      <Typography
-        variant="h4"
-        align="center"
-        color="secondary"
-        bold
-        gutterBottom
-      >
+      <Typography variant="h4" align="center" color="primary" bold gutterBottom>
         TRIVIA QUIZ
       </Typography>
 
@@ -51,7 +59,7 @@ export const Home = () => {
         Which category of quiz do you want to challenge?
       </Typography>
 
-      <Spacer variant="vertical" size={24} />
+      <Spacer variant="vertical" size={48} />
 
       <StyledFlexWrapper>
         <Button variant="contained" onClick={() => fetchQuiz()}>
@@ -67,50 +75,81 @@ export const Home = () => {
         </Button>
       </StyledFlexWrapper>
 
+      <Spacer variant="horizontal" size={40} />
+
       {loadingQuiz && !quiz ? (
         <StyledFlexWrapper>
           <Loading size="lg" color="gray" />
         </StyledFlexWrapper>
       ) : (
-        <>
-          <StyledDiv>
-            <Typography variant="body1" align="center">
-              {quiz &&
-                quiz.question.replace(/&quot;/g, '"').replace(/&#039;/g, "'")}
-            </Typography>
-          </StyledDiv>
-          <StyledDiv>
-            <StyledFlexWrapper>
-              {quiz &&
-                quiz.type === "multiple" &&
-                [quiz.correct_answer, ...quiz.incorrect_answers].map(
-                  (answer, index) => (
-                    <StyledButtonWrapper key={`StyledButtonWrapper__${index}`}>
-                      <ChoiceAnswerButton
-                        answer={answer}
-                        onClick={() =>
-                          submitAnswer(quiz.correct_answer, answer)
-                        }
-                      />
-                    </StyledButtonWrapper>
-                  )
-                )}
-            </StyledFlexWrapper>
-          </StyledDiv>
-          {correct ? "Correct!" : "Umm..."}
-        </>
+        <StyledContainer>
+          <Typography variant="h5" align="center" color="secondary" bold>
+            QUESTION
+          </Typography>
+
+          <Spacer variant="horizontal" size={64} />
+
+          <Typography variant="subtitle1" align="center" bold>
+            {quiz &&
+              quiz.question.replace(/&quot;/g, '"').replace(/&#039;/g, "'")}
+          </Typography>
+
+          <Spacer variant="horizontal" size={24} />
+
+          <StyledFlexWrapper>
+            {quiz &&
+              quiz.type === "multiple" &&
+              [quiz.correct_answer, ...quiz.incorrect_answers].map(
+                (answer, index) => (
+                  <StyledButtonWrapper key={`StyledButtonWrapper__${index}`}>
+                    <ChoiceAnswerButton
+                      answer={answer}
+                      onClick={() => submitAnswer(quiz.correct_answer, answer)}
+                    />
+                  </StyledButtonWrapper>
+                )
+              )}
+            {quiz && quiz.type === "boolean" && (
+              <>
+                <StyledButtonWrapper>
+                  <ChoiceAnswerButton
+                    answer="no"
+                    onClick={() =>
+                      submitAnswer(Boolean(quiz.correct_answer), false)
+                    }
+                  />
+                </StyledButtonWrapper>
+                <StyledButtonWrapper>
+                  <ChoiceAnswerButton
+                    answer="yes"
+                    onClick={() =>
+                      submitAnswer(Boolean(quiz.correct_answer), true)
+                    }
+                  />
+                </StyledButtonWrapper>
+              </>
+            )}
+          </StyledFlexWrapper>
+
+          <Spacer variant="horizontal" size={40} />
+
+          <StyledFlexWrapper>{result}</StyledFlexWrapper>
+        </StyledContainer>
       )}
     </>
   );
 };
 
+const StyledContainer = styled.div`
+  padding: 8px 0 24px 0;
+  background-color: ${(props) => props.theme.palette.secondary[50]};
+  border-radius: 8px;
+  min-height: 360px;
+`;
+
 const StyledFlexWrapper = styled.div`
   display: flex;
   justify-content: center;
-`;
-
-const StyledDiv = styled.div`
-  margin: 40px;
 `;
 
 const StyledButtonWrapper = styled.div`
