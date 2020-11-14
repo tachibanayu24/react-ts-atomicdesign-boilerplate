@@ -40,6 +40,9 @@ const theme = {
       main: "#E91E63",
       dark: "#AD1457",
     },
+    green: {
+      main: "#8bc34a",
+    },
     gray: {
       light: "#888",
       main: "#555",
