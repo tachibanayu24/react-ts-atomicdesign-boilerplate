@@ -51,16 +51,23 @@ export const Home = () => {
 
   return (
     <>
-      <Typography variant="h4" align="center" color="primary" bold gutterBottom>
+      <Typography variant="h4" align="center" color="primary" bold>
         TRIVIA QUIZ
       </Typography>
 
-      <Typography variant="body1" align="center" gutterBottom>
+      <Typography variant="body1" align="center">
         Which category of quiz do you want to challenge?
       </Typography>
 
       <Spacer variant="vertical" size={48} />
 
+      {isCorrect !== null && (
+        <StyledFlexWrapper>
+          <Typography variant="body1" bold gutterBottom>
+            👇 Try again 👇
+          </Typography>
+        </StyledFlexWrapper>
+      )}
       <StyledFlexWrapper>
         <Button variant="contained" onClick={() => fetchQuiz()}>
           <Icon icon="all" size="md" color="gray" />
@@ -104,6 +111,7 @@ export const Home = () => {
                   <StyledButtonWrapper key={`StyledButtonWrapper__${index}`}>
                     <ChoiceAnswerButton
                       answer={answer}
+                      disabled={isCorrect !== null}
                       onClick={() => submitAnswer(quiz.correct_answer, answer)}
                     />
                   </StyledButtonWrapper>
@@ -114,6 +122,7 @@ export const Home = () => {
                 <StyledButtonWrapper>
                   <ChoiceAnswerButton
                     answer="no"
+                    disabled={isCorrect !== null}
                     onClick={() =>
                       submitAnswer(Boolean(quiz.correct_answer), false)
                     }
@@ -122,6 +131,7 @@ export const Home = () => {
                 <StyledButtonWrapper>
                   <ChoiceAnswerButton
                     answer="yes"
+                    disabled={isCorrect !== null}
                     onClick={() =>
                       submitAnswer(Boolean(quiz.correct_answer), true)
                     }
@@ -133,7 +143,15 @@ export const Home = () => {
 
           <Spacer variant="horizontal" size={40} />
 
-          <StyledFlexWrapper>{result}</StyledFlexWrapper>
+          <StyledFlexWrapper>
+            <Typography
+              variant="h6"
+              color={isCorrect ? "primary" : "error"}
+              bold
+            >
+              {result}
+            </Typography>
+          </StyledFlexWrapper>
         </StyledContainer>
       )}
     </>

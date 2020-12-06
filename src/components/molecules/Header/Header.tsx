@@ -8,7 +8,7 @@ export const Header = () => {
       <Toolbar variant="dense">
         <Typography>
           <Typography variant="subtitle1" component="span">
-            React Quiz
+            TRIVIA QUIZ
           </Typography>
           <Spacer variant="vertical" size={24} />
           <Typography variant="caption" component="span">

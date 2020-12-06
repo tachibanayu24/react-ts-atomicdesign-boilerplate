@@ -3,7 +3,7 @@ import { Story } from "@storybook/react/types-6-0";
 import { action } from "@storybook/addon-actions";
 import { withKnobs } from "@storybook/addon-knobs";
 import { Button } from "./Button";
-import { Spacer, Loading, Typography } from "../.";
+import { Spacer, Typography } from "../.";
 
 export default {
   title: "Atoms/Button",
@@ -44,15 +44,6 @@ export const _Default: Story<ComponentProps<typeof Button>> = () => {
               disabled={v === "disabled"}
             >
               Default Color
-            </Button>
-            <Spacer variant="horizontal" size={16} />
-            <Button
-              variant={v}
-              color="primary"
-              onClick={action("clicked")}
-              disabled={v === "disabled"}
-            >
-              <Loading size="sm" color={v === "contained" ? "white" : "gray"} />
             </Button>
             <Spacer variant="horizontal" size={16} />
           </div>

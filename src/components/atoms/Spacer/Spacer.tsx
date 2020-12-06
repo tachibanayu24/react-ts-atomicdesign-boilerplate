@@ -10,7 +10,7 @@ export const Spacer = (props: Props) => <StyledDiv {...props} />;
 
 const StyledDiv = styled.div`
   display: inline-block;
-  ${(props) =>
+  ${(props: Props) =>
     props.variant === "horizontal" &&
     `
     height: ${props.size}px;

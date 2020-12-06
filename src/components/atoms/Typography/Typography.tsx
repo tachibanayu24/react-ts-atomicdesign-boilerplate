@@ -24,6 +24,6 @@ export const Typography = (props: Props) => <StyledTypography {...props} />;
 
 const StyledTypography = styled(MuiTypography)`
   &.MuiTypography-root {
-    ${(props) => props.bold && `font-weight: bold;`}
+    ${(props: Props) => props.bold && `font-weight: bold;`}
   }
 `;

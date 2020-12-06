@@ -13,10 +13,11 @@
     "target": "es5",
     "module": "es2015",
     "jsx": "react",
-    "strict": true
+    "strict": true,
+    "typeRoots": ["node_modules/@types", "./src/types"]
   },
   "paths": {
-    "@rtab/components/*": ["src/components/*"],
+    "@rtab/components/atoms": ["src/components/atoms/index.ts"],
     "@rtab/images/*": ["src/images/*"]
   },
   "exclude": ["node_modules", "tmp"]

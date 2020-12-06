@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ReactDOM from "react-dom";
 import { ThemeProvider, GlobalStyle } from "@rtab/components/utils";
 import { Spacer } from "@rtab/components/atoms";
-import { Header } from "@rtab/components/molecules";
+import { Header, ForkMe } from "@rtab/components/molecules";
 import { Home } from "@rtab/components/pages";
 
 const Index = () => (
@@ -11,6 +11,7 @@ const Index = () => (
     <GlobalStyle />
     <ThemeProvider>
       <Header />
+      <ForkMe />
       <Spacer variant="horizontal" size={48} />
       <HomeLayout>
         <Home />

@@ -3,7 +3,7 @@ import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/styles";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 
-const theme = {
+const theme = createMuiTheme({
   overrides: {},
   typography: {
     fontFamily:
@@ -40,12 +40,10 @@ const theme = {
       main: "#8bc34a",
       dark: "#689f38",
     },
-    green: {
-      main: "#8bc34a",
-    },
     gray: {
       light: "#888",
       main: "#555",
+      dark: "#333",
     },
     white: {
       main: "#fff",
@@ -54,7 +52,7 @@ const theme = {
       primary: "#333",
     },
   },
-};
+});
 
 type Props = {
   children: React.ReactNode;

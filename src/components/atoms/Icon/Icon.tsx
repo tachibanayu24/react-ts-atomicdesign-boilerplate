@@ -17,7 +17,7 @@ const SIZE = {
 type Props = {
   size: "sm" | "md" | "lg";
   icon: "user" | "circle" | "cross" | "all" | "science" | "music";
-  color: "primary" | "secondary" | "gray" | "green" | "white";
+  color: "primary" | "secondary" | "gray" | "white";
 };
 
 export const Icon = (props: Props) => {
@@ -38,8 +38,8 @@ export const Icon = (props: Props) => {
 };
 
 const StyledWrapper = styled.svg`
-  height: ${(props) => SIZE[props.size]}px;
-  width: ${(props) => SIZE[props.size]}px;
+  height: ${(props: Props) => SIZE[props.size]}px;
+  width: ${(props: Props) => SIZE[props.size]}px;
   fill: ${(props) => props.theme.palette[props.color].main};
   stroke: ${(props) => props.theme.palette[props.color].main};
 `;

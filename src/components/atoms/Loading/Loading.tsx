@@ -28,8 +28,8 @@ export const Loading = (props: Props) => (
 );
 
 const StyledWrapper = styled.div`
-  width: ${(props) => 80 * SCALE[props.size]}px;
-  height: ${(props) => 80 * SCALE[props.size]}px;
+  width: ${(props: Props) => 80 * SCALE[props.size]}px;
+  height: ${(props: Props) => 80 * SCALE[props.size]}px;
   top: 50%;
   left: 50%;
   /* transform: translate(-50%, -70%); */
@@ -38,8 +38,7 @@ const StyledWrapper = styled.div`
 const StyledLoading = styled.div`
   display: inline-block;
   position: relative;
-
-  transform: scale(${(props) => SCALE[props.size]});
+  transform: scale(${(props: Props) => SCALE[props.size]});
 
   div {
     animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
