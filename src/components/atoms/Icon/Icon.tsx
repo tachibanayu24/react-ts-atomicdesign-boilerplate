@@ -7,6 +7,7 @@ import Cross from "@rtab/images/icons/cross.svg";
 import All from "@rtab/images/icons/all.svg";
 import Science from "@rtab/images/icons/science.svg";
 import Music from "@rtab/images/icons/music.svg";
+import Fire from "@rtab/images/icons/fire.svg";
 
 const SIZE = {
   lg: 32,
@@ -16,8 +17,8 @@ const SIZE = {
 
 type Props = {
   size: "sm" | "md" | "lg";
-  icon: "user" | "circle" | "cross" | "all" | "science" | "music";
-  color: "primary" | "secondary" | "gray" | "white";
+  icon: "user" | "circle" | "cross" | "all" | "science" | "music" | "fire";
+  color: "primary" | "secondary" | "gray" | "white" | "error";
 };
 
 export const Icon = (props: Props) => {
@@ -28,6 +29,7 @@ export const Icon = (props: Props) => {
     all: <All width={SIZE[props.size]} height={SIZE[props.size]} />,
     science: <Science width={SIZE[props.size]} height={SIZE[props.size]} />,
     music: <Music width={SIZE[props.size]} height={SIZE[props.size]} />,
+    fire: <Fire width={SIZE[props.size]} height={SIZE[props.size]} />,
   };
 
   return (

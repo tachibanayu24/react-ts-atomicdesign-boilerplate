@@ -14,10 +14,17 @@ import { get, buildReplyToAnswer } from "@rtab/utils";
 
 interface QuizType {
   type: "multiple" | "boolean";
+  difficulty: "easy" | "medium" | "hard";
   question: string;
   correct_answer: string;
   incorrect_answers: string[];
 }
+
+const DIFFICULTY_POINTS = {
+  easy: 1,
+  medium: 2,
+  hard: 3,
+};
 
 export const Home = () => {
   const [quiz, setQuiz] = useState<QuizType>({});
@@ -33,8 +40,6 @@ export const Home = () => {
   }, [isAnswered, isCorrect]);
 
   console.log(quiz);
-  console.log(isCorrect);
-  console.log(result);
 
   const resetState = () => {
     setQuiz(null);
@@ -44,11 +49,11 @@ export const Home = () => {
     setResult(null);
   };
 
-  const fetchQuiz = (category: string | null) => {
+  const fetchQuiz = (categoryNumber: number | null) => {
     setLoadingQuiz(true);
     resetState();
 
-    get("/", { amount: 1, category: category })
+    get("/", { amount: 1, category: categoryNumber })
       .then((res: { data: { results: React.SetStateAction<QuizType>[] } }) => {
         setQuiz(res.data.results[0]);
       })
@@ -93,13 +98,13 @@ export const Home = () => {
         </Tooltip>
         <Spacer variant="vertical" size={16} />
         <Tooltip title="SCIENCE">
-          <Button variant="contained" onClick={() => fetchQuiz("science")}>
+          <Button variant="contained" onClick={() => fetchQuiz(17)}>
             <Icon icon="science" size="md" color="gray" />
           </Button>
         </Tooltip>
         <Spacer variant="vertical" size={16} />
         <Tooltip title="MUSIC">
-          <Button variant="contained" onClick={() => fetchQuiz("music")}>
+          <Button variant="contained" onClick={() => fetchQuiz(12)}>
             <Icon icon="music" size="md" color="gray" />
           </Button>
         </Tooltip>
@@ -119,7 +124,24 @@ export const Home = () => {
             QUESTION
           </Typography>
 
-          <Spacer variant="horizontal" size={64} />
+          <Spacer variant="horizontal" size={32} />
+
+          <StyledFlexWrapper>
+            <Typography variant="button" color="error" bold>
+              {quiz.difficulty}
+            </Typography>
+            <Spacer variant="vertical" size={16} />
+            {[...Array(DIFFICULTY_POINTS[quiz.difficulty])].map((_, i) => (
+              <Icon
+                key={`difficulty_icon--${i}`}
+                icon="fire"
+                size="md"
+                color="error"
+              />
+            ))}
+          </StyledFlexWrapper>
+
+          <Spacer variant="horizontal" size={24} />
 
           <Typography variant="subtitle1" align="center" bold>
             {!_.isEmpty(quiz) &&
