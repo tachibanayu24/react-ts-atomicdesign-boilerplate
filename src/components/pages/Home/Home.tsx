@@ -91,6 +91,18 @@ export const Home = () => {
           </Button>
         </Tooltip>
         <Spacer variant="vertical" size={16} />
+        <Tooltip title="JAPANESE ANIME">
+          <Button variant="contained" onClick={() => fetchQuiz(31)}>
+            <Icon icon="anime" size="md" color="gray" />
+          </Button>
+        </Tooltip>
+        <Spacer variant="vertical" size={16} />
+        <Tooltip title="ANIMAL">
+          <Button variant="contained" onClick={() => fetchQuiz(27)}>
+            <Icon icon="animal" size="md" color="gray" />
+          </Button>
+        </Tooltip>
+        <Spacer variant="vertical" size={16} />
         <Tooltip title="SCIENCE">
           <Button variant="contained" onClick={() => fetchQuiz(17)}>
             <Icon icon="science" size="md" color="gray" />
@@ -113,23 +125,23 @@ export const Home = () => {
       )}
 
       {!loadingQuiz && isFetchedQuiz && (
-        <StyledContainer>
-          <Typography variant="h5" align="center" color="secondary" bold>
-            QUESTION
-          </Typography>
-
-          <Spacer variant="horizontal" size={32} />
-
+        <>
           <StyledFlexWrapper>
             <DifficultyChip difficulty={quiz.difficulty} />
           </StyledFlexWrapper>
 
           <Spacer variant="horizontal" size={24} />
 
-          <Typography variant="subtitle1" align="center" bold>
-            {!_.isEmpty(quiz) &&
-              quiz.question.replace(/&quot;/g, '"').replace(/&#039;/g, "'")}
-          </Typography>
+          <StyledFlexWrapper alignItems="baseline">
+            <Typography variant="h5" align="center" color="secondary" bold>
+              Q.
+            </Typography>
+            <Spacer variant="vertical" size={8} />
+            <Typography variant="body2" align="center" bold>
+              {!_.isEmpty(quiz) &&
+                quiz.question.replace(/&quot;/g, '"').replace(/&#039;/g, "'")}
+            </Typography>
+          </StyledFlexWrapper>
 
           <Spacer variant="horizontal" size={24} />
 
@@ -182,19 +194,11 @@ export const Home = () => {
               {result}
             </Typography>
           </StyledFlexWrapper>
-        </StyledContainer>
+        </>
       )}
     </>
   );
 };
-
-const StyledContainer = styled.div`
-  margin: 0 24px;
-  padding: 8px 0 24px 0;
-  background-color: ${(props) => props.theme.palette.secondary[50]};
-  border-radius: 8px;
-  min-height: 360px;
-`;
 
 const StyledTypography = styled(Typography)`
   animation: fluffy 2s ease infinite;
@@ -230,6 +234,8 @@ const StyledTypography = styled(Typography)`
 const StyledFlexWrapper = styled.div`
   display: flex;
   justify-content: center;
+  ${(props: { alignItems?: string }) =>
+    props.alignItems && `align-items: ${props.alignItems};`}
 `;
 
 const StyledButtonWrapper = styled.div`

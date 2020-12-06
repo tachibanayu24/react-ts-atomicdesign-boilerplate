@@ -4,6 +4,8 @@ import { Typography as MuiTypography } from "@material-ui/core";
 
 type CustomProps = {
   variant:
+    | "h1"
+    | "h2"
     | "h3"
     | "h4"
     | "h5"
