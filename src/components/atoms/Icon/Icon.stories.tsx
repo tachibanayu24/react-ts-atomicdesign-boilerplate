@@ -27,6 +27,7 @@ export const _Default: Story<ComponentProps<typeof Icon>> = () => {
       secondary: "secondary",
       gray: "gray",
       white: "white",
+      red: "red",
     },
     "gray"
   );

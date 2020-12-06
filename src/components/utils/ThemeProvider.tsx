@@ -2,6 +2,7 @@ import React from "react";
 import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/styles";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import red from "@material-ui/core/colors/red";
 
 const theme = createMuiTheme({
   overrides: {},
@@ -39,6 +40,12 @@ const theme = createMuiTheme({
       light: "#aed581",
       main: "#8bc34a",
       dark: "#689f38",
+    },
+    red: {
+      ...red,
+      light: "#e57373",
+      main: "#f44336",
+      dark: "#d32f2f",
     },
     gray: {
       light: "#888",

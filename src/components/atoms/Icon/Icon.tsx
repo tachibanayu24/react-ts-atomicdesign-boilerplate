@@ -18,7 +18,7 @@ const SIZE = {
 type Props = {
   size: "sm" | "md" | "lg";
   icon: "user" | "circle" | "cross" | "all" | "science" | "music" | "fire";
-  color: "primary" | "secondary" | "gray" | "white" | "error";
+  color: "primary" | "secondary" | "gray" | "white" | "red";
 };
 
 export const Icon = (props: Props) => {

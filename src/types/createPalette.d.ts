@@ -32,6 +32,26 @@ interface Secondary {
   dark: string;
 }
 
+interface Red {
+  50: string;
+  100: string;
+  200: string;
+  300: string;
+  400: string;
+  500: string;
+  600: string;
+  700: string;
+  800: string;
+  900: string;
+  A100: string;
+  A200: string;
+  A400: string;
+  A700: string;
+  light: string;
+  main: string;
+  dark: string;
+}
+
 interface Gray {
   light: string;
   main: string;
@@ -49,6 +69,7 @@ interface Text {
 interface CustomPalette {
   primary: Primary;
   secondary: Secondary;
+  red: Red;
   gray: Gray;
   white: White;
   text: Text;

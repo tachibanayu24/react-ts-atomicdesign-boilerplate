@@ -136,7 +136,7 @@ export const Home = () => {
                 key={`difficulty_icon--${i}`}
                 icon="fire"
                 size="md"
-                color="error"
+                color="red"
               />
             ))}
           </StyledFlexWrapper>
