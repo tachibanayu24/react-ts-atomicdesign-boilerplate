@@ -14,6 +14,7 @@ export const ForkMe = () => (
 );
 
 const StyledWrapper = styled.span`
+  overflow: hidden;
   position: absolute;
   display: block;
   top: 0;
