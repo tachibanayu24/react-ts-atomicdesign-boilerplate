@@ -10,11 +10,13 @@ const getInstance = () => {
   });
 };
 
-export const get = (path, params) => {
-  let options = null;
-  console.log("get");
-  console.log(path);
-  console.log(params);
+/**
+ * Build a get instance of axios
+ * @param path
+ * @param params
+ */
+export const get = (path: string, params?: {} | null) => {
+  let options = {};
 
   if (params) {
     options = { params };

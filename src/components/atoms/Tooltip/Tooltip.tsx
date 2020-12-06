@@ -7,8 +7,12 @@ type Props = React.ComponentProps<typeof MuiTooltip>;
 
 export const Tooltip = (props: Props) => {
   return (
-    <StyledTooltip {...props} arrow>
-      <Typography variant="caption">{props.children}</Typography>
+    <StyledTooltip
+      {...props}
+      arrow
+      title={<Typography variant="caption">{props.title}</Typography>}
+    >
+      {props.children}
     </StyledTooltip>
   );
 };
