@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { ThemeProvider, GlobalStyle } from "@rtab/components/utils";
 import { Spacer } from "@rtab/components/atoms";
-import { Header, ForkMe } from "@rtab/components/molecules";
+import { Header, Footer, ForkMe } from "@rtab/components/molecules";
 import { Home } from "@rtab/components/pages";
 
 const Index = () => (
@@ -19,6 +19,7 @@ const Index = () => (
           <Route exact path="/" component={Home} />
         </Router>
       </HomeLayout>
+      <Footer />
     </ThemeProvider>
   </>
 );

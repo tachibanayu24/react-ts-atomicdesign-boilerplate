@@ -16,7 +16,7 @@ export const Footer = () => {
 const StyledFooter = styled.footer`
   background-color: ${(props) => props.theme.palette.grey[50]};
   bottom: 0;
-  position: sticky;
+  position: absolute;
   width: 100vw;
   text-align: center;
 `;

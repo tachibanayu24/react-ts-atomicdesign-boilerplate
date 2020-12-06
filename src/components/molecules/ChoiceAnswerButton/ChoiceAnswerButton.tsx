@@ -15,7 +15,7 @@ export const ChoiceAnswerButton = (props: Props) => {
         onClick={props.onClick}
         disabled={props.disabled}
       >
-        <Icon icon="circle" size="md" color="red" />
+        <Icon icon="circle" size="md" color={props.disabled ? "grey" : "red"} />
       </Button>
     );
   } else if (props.answer === "no") {
@@ -25,7 +25,11 @@ export const ChoiceAnswerButton = (props: Props) => {
         onClick={props.onClick}
         disabled={props.disabled}
       >
-        <Icon icon="cross" size="md" color="secondary" />
+        <Icon
+          icon="cross"
+          size="md"
+          color={props.disabled ? "grey" : "secondary"}
+        />
       </Button>
     );
   } else {
