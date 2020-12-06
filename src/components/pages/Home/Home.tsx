@@ -29,11 +29,8 @@ export const Home = () => {
   const [result, setResult] = useState<string>("");
 
   useEffect(() => {
-    console.log("useEffect");
     isAnswered && setResult(buildReplyToAnswer(isCorrect));
   }, [isAnswered, isCorrect]);
-
-  console.log(quiz);
 
   const resetState = () => {
     setQuiz(null);
@@ -58,10 +55,7 @@ export const Home = () => {
       });
   };
 
-  const submitAnswer = (
-    correctAnswer: string | boolean,
-    choosenAnswer: string | boolean
-  ) => {
+  const submitAnswer = (correctAnswer: string, choosenAnswer: string) => {
     setIsAnswered(true);
     setIsCorrect(correctAnswer === choosenAnswer);
   };
@@ -166,18 +160,14 @@ export const Home = () => {
                   <ChoiceAnswerButton
                     answer="no"
                     disabled={isAnswered}
-                    onClick={() =>
-                      submitAnswer(Boolean(quiz.correct_answer), false)
-                    }
+                    onClick={() => submitAnswer(quiz.correct_answer, "False")}
                   />
                 </StyledButtonWrapper>
                 <StyledButtonWrapper>
                   <ChoiceAnswerButton
                     answer="yes"
                     disabled={isAnswered}
-                    onClick={() =>
-                      submitAnswer(Boolean(quiz.correct_answer), true)
-                    }
+                    onClick={() => submitAnswer(quiz.correct_answer, "True")}
                   />
                 </StyledButtonWrapper>
               </>
@@ -186,15 +176,22 @@ export const Home = () => {
 
           <Spacer variant="horizontal" size={40} />
 
-          <StyledFlexWrapper>
-            <Typography
-              variant="h4"
-              color={isCorrect ? "secondary" : "error"}
-              bold
-            >
-              {result}
+          <Typography
+            variant="h4"
+            color={isCorrect ? "secondary" : "error"}
+            align="center"
+            bold
+          >
+            {result}
+          </Typography>
+
+          <Spacer variant="horizontal" size={32} />
+
+          {isAnswered && !isCorrect && (
+            <Typography variant="body2" align="center">
+              The correct answer is ...{quiz.correct_answer}!
             </Typography>
-          </StyledFlexWrapper>
+          )}
         </>
       )}
     </>
