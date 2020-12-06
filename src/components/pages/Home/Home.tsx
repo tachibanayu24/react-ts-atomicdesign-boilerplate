@@ -9,7 +9,7 @@ import {
   Spacer,
   Tooltip,
 } from "@rtab/components/atoms";
-import { ChoiceAnswerButton } from "@rtab/components/molecules";
+import { ChoiceAnswerButton, DifficultyChip } from "@rtab/components/molecules";
 import { get, buildReplyToAnswer } from "@rtab/utils";
 
 interface QuizType {
@@ -19,12 +19,6 @@ interface QuizType {
   correct_answer: string;
   incorrect_answers: string[];
 }
-
-const DIFFICULTY_POINTS = {
-  easy: 1,
-  medium: 2,
-  hard: 3,
-};
 
 export const Home = () => {
   const [quiz, setQuiz] = useState<QuizType>({});
@@ -127,18 +121,7 @@ export const Home = () => {
           <Spacer variant="horizontal" size={32} />
 
           <StyledFlexWrapper>
-            <Typography variant="button" color="error" bold>
-              {quiz.difficulty}
-            </Typography>
-            <Spacer variant="vertical" size={16} />
-            {[...Array(DIFFICULTY_POINTS[quiz.difficulty])].map((_, i) => (
-              <Icon
-                key={`difficulty_icon--${i}`}
-                icon="fire"
-                size="md"
-                color="red"
-              />
-            ))}
+            <DifficultyChip difficulty={quiz.difficulty} />
           </StyledFlexWrapper>
 
           <Spacer variant="horizontal" size={24} />
