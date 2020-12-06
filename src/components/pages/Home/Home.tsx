@@ -87,60 +87,61 @@ export const Home = () => {
       <StyledFlexWrapper>
         <Tooltip title="ALL">
           <Button variant="contained" onClick={() => fetchQuiz(null)}>
-            <Icon icon="all" size="md" color="gray" />
+            <Icon icon="all" size="md" color="grey" />
           </Button>
         </Tooltip>
         <Spacer variant="vertical" size={16} />
         <Tooltip title="JAPANESE ANIME">
           <Button variant="contained" onClick={() => fetchQuiz(31)}>
-            <Icon icon="anime" size="md" color="gray" />
+            <Icon icon="anime" size="md" color="grey" />
           </Button>
         </Tooltip>
         <Spacer variant="vertical" size={16} />
         <Tooltip title="ANIMAL">
           <Button variant="contained" onClick={() => fetchQuiz(27)}>
-            <Icon icon="animal" size="md" color="gray" />
+            <Icon icon="animal" size="md" color="grey" />
           </Button>
         </Tooltip>
         <Spacer variant="vertical" size={16} />
         <Tooltip title="SCIENCE">
           <Button variant="contained" onClick={() => fetchQuiz(17)}>
-            <Icon icon="science" size="md" color="gray" />
+            <Icon icon="science" size="md" color="grey" />
           </Button>
         </Tooltip>
         <Spacer variant="vertical" size={16} />
         <Tooltip title="MUSIC">
           <Button variant="contained" onClick={() => fetchQuiz(12)}>
-            <Icon icon="music" size="md" color="gray" />
+            <Icon icon="music" size="md" color="grey" />
           </Button>
         </Tooltip>
       </StyledFlexWrapper>
 
-      <Spacer variant="horizontal" size={40} />
+      <Spacer variant="horizontal" size={80} />
 
       {loadingQuiz && (
         <StyledFlexWrapper>
-          <Loading size="lg" color="gray" />
+          <Loading size="lg" color="grey" />
         </StyledFlexWrapper>
       )}
 
       {!loadingQuiz && isFetchedQuiz && (
         <>
-          <StyledFlexWrapper>
-            <DifficultyChip difficulty={quiz.difficulty} />
-          </StyledFlexWrapper>
-
-          <Spacer variant="horizontal" size={24} />
-
           <StyledFlexWrapper alignItems="baseline">
             <Typography variant="h5" align="center" color="secondary" bold>
               Q.
             </Typography>
             <Spacer variant="vertical" size={8} />
+
             <Typography variant="body2" align="center" bold>
               {!_.isEmpty(quiz) &&
                 quiz.question.replace(/&quot;/g, '"').replace(/&#039;/g, "'")}
             </Typography>
+          </StyledFlexWrapper>
+
+          <Spacer variant="horizontal" size={16} />
+
+          <StyledFlexWrapper>
+            <DifficultyChip difficulty={quiz.difficulty} />
           </StyledFlexWrapper>
 
           <Spacer variant="horizontal" size={24} />
@@ -148,7 +149,7 @@ export const Home = () => {
           <StyledFlexWrapper>
             {quiz &&
               quiz.type === "multiple" &&
-              [quiz.correct_answer, ...quiz.incorrect_answers].map(
+              _.shuffle([quiz.correct_answer, ...quiz.incorrect_answers]).map(
                 (answer, index) => (
                   <StyledButtonWrapper key={`StyledButtonWrapper__${index}`}>
                     <ChoiceAnswerButton
@@ -187,8 +188,8 @@ export const Home = () => {
 
           <StyledFlexWrapper>
             <Typography
-              variant="h6"
-              color={isCorrect ? "primary" : "error"}
+              variant="h4"
+              color={isCorrect ? "secondary" : "error"}
               bold
             >
               {result}

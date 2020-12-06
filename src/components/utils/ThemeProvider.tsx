@@ -2,7 +2,11 @@ import React from "react";
 import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/styles";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import red from "@material-ui/core/colors/red";
+import { red, grey } from "@material-ui/core/colors";
+
+type Props = {
+  children: React.ReactNode;
+};
 
 const theme = createMuiTheme({
   overrides: {},
@@ -41,17 +45,19 @@ const theme = createMuiTheme({
       main: "#8bc34a",
       dark: "#689f38",
     },
+    grey: {
+      ...grey,
+      light: "#888",
+      main: "#555",
+      dark: "#333",
+    },
     red: {
       ...red,
       light: "#e57373",
       main: "#f44336",
       dark: "#d32f2f",
     },
-    gray: {
-      light: "#888",
-      main: "#555",
-      dark: "#333",
-    },
+
     white: {
       main: "#fff",
     },
@@ -60,10 +66,6 @@ const theme = createMuiTheme({
     },
   },
 });
-
-type Props = {
-  children: React.ReactNode;
-};
 
 export const ThemeProvider: React.FC<Props> = ({ children }: Props) => {
   return (

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 type Props = {
   size: "sm" | "md" | "lg";
-  color: "primary" | "secondary" | "gray" | "white";
+  color: "primary" | "secondary" | "grey" | "white";
 };
 
 const SCALE = {

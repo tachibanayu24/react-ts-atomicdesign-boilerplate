@@ -29,7 +29,7 @@ type Props = {
     | "anime"
     | "animal"
     | "fire";
-  color: "primary" | "secondary" | "gray" | "white" | "red";
+  color: "primary" | "secondary" | "grey" | "white" | "red";
 };
 
 export const Icon = (props: Props) => {

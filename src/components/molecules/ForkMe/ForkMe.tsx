@@ -25,7 +25,7 @@ const StyledWrapper = styled.span`
 `;
 
 const StyledLink = styled.a`
-  background: ${(props) => props.theme.palette.gray.light};
+  background: ${(props) => props.theme.palette.grey.light};
   white-space: nowrap;
   color: ${(props) => props.theme.palette.secondary[100]};
   text-decoration: none;
@@ -49,7 +49,7 @@ const StyledLink = styled.a`
 
   &:hover {
     background: ${(props) => props.theme.palette.secondary.light};
-    color: ${(props) => props.theme.palette.gray.main};
+    color: ${(props) => props.theme.palette.grey.main};
   }
 
   &::before,

@@ -25,11 +25,11 @@ export const _Default: Story<ComponentProps<typeof Icon>> = () => {
     {
       primary: "primary",
       secondary: "secondary",
-      gray: "gray",
+      grey: "grey",
       white: "white",
       red: "red",
     },
-    "gray"
+    "grey"
   );
 
   return (
@@ -39,7 +39,7 @@ export const _Default: Story<ComponentProps<typeof Icon>> = () => {
         padding: 1rem;
         width: 100vw;
         height: 100vh;
-        ${color === "white" && `background-color: gray;`}
+        ${color === "white" && `background-color: grey;`}
       `}
     >
       <Icon size={size} color={color} icon="user" />

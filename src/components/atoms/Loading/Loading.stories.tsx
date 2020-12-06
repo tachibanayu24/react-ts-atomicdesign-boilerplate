@@ -29,11 +29,11 @@ export const _Default: Story<ComponentProps<typeof Loading>> = () => {
       </div>
       <Spacer variant="horizontal" size={32} />
       <div css="padding: 32px 40px; display: flex;">
-        <Loading color="gray" size="lg" />
+        <Loading color="grey" size="lg" />
         <Spacer variant="vertical" size={16} />
-        <Loading color="gray" size="md" />
+        <Loading color="grey" size="md" />
         <Spacer variant="vertical" size={16} />
-        <Loading color="gray" size="sm" />
+        <Loading color="grey" size="sm" />
       </div>
     </>
   );
