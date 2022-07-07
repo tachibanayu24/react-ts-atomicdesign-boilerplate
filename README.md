@@ -44,29 +44,3 @@ $ yarn create-component -C atoms/Icon
 ✨ Create component ./src/components/atoms/Icon/Icon.stories.tsx
 ✨ Create component ./src/components/atoms/Icon/Icon.spec.tsx
 ```
-
-WIP
-
-tasks
-
-- [x] ts
-- [x] webpack
-- [x] mui
-- [x] atomic design
-- [x] styled-components
-- [ ] routing
-- [ ] jest, testing-library
-- [x] lint
-- [ ] ci
-- [x] storybook
-- [ ] axios
-- [ ] date-fns
-- [x] CLI(create-components)
-- [x] .vscode
-- [x] storybook to gp
-
-bugs
-
-- [x] vscode の設定(インポートでエラー)
-- [ ] storybook の deprecated 対応
-- [ ] ビルドしたstorybookにテーマがあたっていない
